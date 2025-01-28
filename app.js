@@ -4,7 +4,7 @@ const express = require('express');
 const path = require('path'); // Built-in Node.js module for handling file paths
 
 // Constants
-const PORT = 8080;
+const PORT = process.env.PORT || 3000;
 const HOST = '0.0.0.0';
 
 // App
