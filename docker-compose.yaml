@@ -1,18 +1,20 @@
 version: "3.8"
 
 services:
-  # First service
   service1:
-    image: myapp:latest  # Use the image "myapp:latest"
+    image: myapp:latest
     ports:
-      - "3000:3000"  # Map port 3000 on the host to port 3000 in the container
+      - "3000:3000"  # Map port 3000 on the host to 3000 in the container
     deploy:
-      replicas: 3  # Deploy 3 replicas of this service
+      replicas: 3
+    environment:
+      - PORT=3000  # Set port for Service 1
 
-  # Second service
   service2:
-    image: myapp:latest  # Use the image "myapp:latest"
+    image: myapp:latest
     ports:
-      - "3005:3005"  # Map port 3001 on the host to port 3001 in the container
+      - "3001:3001"  # Map port 3001 on the host to 3001 in the container
     deploy:
-      replicas: 2  # Deploy 2 replicas of this service
+      replicas: 2
+    environment:
+      - PORT=3001  # Set port for Service 2
